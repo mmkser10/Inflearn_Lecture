@@ -1,18 +1,21 @@
 package com.oflo.spring_basic.service;
 
 import com.oflo.spring_basic.domain.Member;
+import com.oflo.spring_basic.repository.MemberRepository;
 import com.oflo.spring_basic.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public class MemberService {
 
-    private final MemoryMemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
-    public MemberService(MemoryMemberRepository memberRepository) {
+
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 

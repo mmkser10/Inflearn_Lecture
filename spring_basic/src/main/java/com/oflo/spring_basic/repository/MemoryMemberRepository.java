@@ -1,8 +1,10 @@
 package com.oflo.spring_basic.repository;
 
 import com.oflo.spring_basic.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository  implements MemberRepository{
 
