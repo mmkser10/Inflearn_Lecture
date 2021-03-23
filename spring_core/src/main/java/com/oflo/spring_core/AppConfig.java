@@ -1,5 +1,7 @@
 package com.oflo.spring_core;
 
+import com.oflo.spring_core.discount.DiscountPolicy;
+import com.oflo.spring_core.discount.FixDiscountPolicy;
 import com.oflo.spring_core.discount.RateDiscountPolicy;
 import com.oflo.spring_core.member.MemberRepository;
 import com.oflo.spring_core.member.MemberService;
@@ -11,10 +13,19 @@ import com.oflo.spring_core.order.OrderServiceImpi;
 public class AppConfig {
 
     public MemberService memberService(){
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(memberRepository());
+    }
+
+    private MemoryMemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService(){
-        return new OrderServiceImpi(new MemoryMemberRepository(), new RateDiscountPolicy());
+        return new OrderServiceImpi(memberRepository(), discountPolicy());
+    }
+
+    public DiscountPolicy discountPolicy(){
+//        return new FixDiscountPolicy()
+        return new RateDiscountPolicy();
     }
 }
