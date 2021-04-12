@@ -9,7 +9,7 @@
  - spring_core : [인프런]스프링 핵심 원리 - 기본편
  - freelec-springboot2-webservice : 스프링 부트와 AWS로 혼자 구현하는 웹 서비스
 
-> commit시 접두어
-> spring_basic : None
-> spring_core : [core]
+> ### commit시 각 프로젝트에 추가되는 접두어
+> spring_basic : None  
+> spring_core : [core]  
 > freelec-springboot2-webservice : [free]
