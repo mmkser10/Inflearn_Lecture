@@ -1,0 +1,8 @@
+package com.oflo.springcore.member;
+
+public interface MemberRepository {
+
+    void save(Member member);
+
+    Member findById(Long id);
+}
